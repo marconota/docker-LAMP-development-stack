@@ -22,6 +22,8 @@ services:
       - '3306:3306'
     volumes:
       - ./data/mysql:/var/lib/mysql
+      - ./docker/mariadb/conf.d:/etc/mysql/conf.d
+      - ./docker/mariadb/logs:/var/log/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=password
 
