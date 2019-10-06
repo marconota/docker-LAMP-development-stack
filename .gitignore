@@ -1,0 +1,7 @@
+.idea/
+
+*.cache
+*.log
+*.lock
+
+docker-compose.override.yml

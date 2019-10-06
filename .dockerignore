@@ -1,0 +1,17 @@
+.idea/
+xdebug/
+code/vendor/
+code/node_modules/
+
+*.dist
+*.cache
+*.log
+
+.git/
+.gitignore
+code/.gitignore
+
+.dockerignore
+docker-compose.*
+
+README.md

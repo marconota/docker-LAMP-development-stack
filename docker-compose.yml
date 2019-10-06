@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+
+  nginx:
+    container_name: 'nginx'
+    image: nginx:1.16
+    links:
+      - php-fpm
+
+  php-fpm:
+    container_name: 'php-fpm'
+    build:
+      context: ./docker/php-fpm/
+    env_file: ./code/.env
+
+  webgrind:
+    container_name: 'webgrind'
+    image: wodby/webgrind:1.6
+    environment:
+      WEBGRIND_PROFILER_DIR: "/tmp/xdebug/profiler"

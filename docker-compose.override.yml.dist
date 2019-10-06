@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+
+  nginx:
+    volumes:
+      - ./code/public:/var/www/html/public
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d
+      - ./docker/nginx/logs:/var/log/nginx
+    ports:
+      - "80:80"
+
+  php-fpm:
+    volumes:
+      - ./code:/var/www/html
+      - ./xdebug:/tmp/xdebug
+
+  webgrind:
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./xdebug:/tmp/xdebug
