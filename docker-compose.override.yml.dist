@@ -11,6 +11,8 @@ services:
       - "80:80"
 
   php-fpm:
+    ports:
+      - '9000:9000'
     volumes:
       - ./code:/var/www/html
       - ./xdebug:/tmp/xdebug
