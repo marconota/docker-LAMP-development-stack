@@ -15,6 +15,14 @@ services:
       - ./code:/var/www/html
       - ./xdebug:/tmp/xdebug
 
+  mariadb:
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+
   webgrind:
     ports:
       - "8080:8080"

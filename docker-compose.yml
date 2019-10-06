@@ -13,6 +13,13 @@ services:
     build:
       context: ./docker/php-fpm/
     env_file: ./code/.env
+    links:
+      - mariadb
+
+  mariadb:
+    container_name: 'mariadb'
+    image: mariadb:10.4
+    restart: always
 
   webgrind:
     container_name: 'webgrind'
